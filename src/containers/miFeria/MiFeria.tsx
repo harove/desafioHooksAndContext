@@ -1,27 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Formulario from "../../components/formulario/Formulario";
 import Producto from "../../components/producto/Producto";
 import FeriaContext from "../../contextos/FeriaContext";
 
-const products = [
-  {
-    id: 1,
-    name: "Papaya",
-    price: 100,
-  },
-  {
-    id: 2,
-    name: "Pera",
-    price: 50,
-  },
-];
+
 
 const MiFeria = () => {
-  const [productos, setProductos] = useState(products);
-  
-  const handlerOnAdd = (newProducto: any) => {
-    setProductos([...productos, newProducto]);
-  };
+
+  const {productos} = useContext(FeriaContext)
 
   return (
     <div className="container">
@@ -37,9 +23,7 @@ const MiFeria = () => {
             ))}
           </div>
           <div className="col-4">
-            <FeriaContext.Provider value={{handlerOnAdd}}>
                 <Formulario/>
-            </FeriaContext.Provider>
           </div>
         </div>
       }
