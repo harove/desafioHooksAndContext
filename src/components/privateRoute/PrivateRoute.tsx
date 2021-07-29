@@ -10,7 +10,7 @@ interface Props {
 
 const PrivateRoute = ({component: Component, ...Rest}: Props) => {
   const { isLogin } = useContext(LoginContext);
-  return isLogin ? <Route path={Rest.path} exact={Rest.exact} render={routeProps=><Component {...routeProps}/>}  /> : <Redirect to="/" />;
+  return isLogin ? <Route {...Rest} render={routeProps=><Component {...routeProps}/>}  /> : <Redirect to="/" />;
 };
 
 export default PrivateRoute;

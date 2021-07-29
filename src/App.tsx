@@ -31,7 +31,13 @@ function App() {
                 <Home />
               </Route>
               <Route path="/about" exact component={About} />
-              <Route path="/miFeria" exact component={MiFeria} />
+
+              {/* <Route path="/miFeria" exact component={MiFeria} /> */}
+              
+              <Route path="/privateMiFeria" exact>
+                <PrivateRoute path="/privateMiFeria" exact component={MiFeria} />
+              </Route>
+      
               <Route path="/comentarios/:id" exact>
                 <Comentarios />
               </Route>
