@@ -21,7 +21,7 @@ import PrivateHome from "./containers/privateHome/PrivateHome";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <LoginContextManager>
         <FeriaContextManager>
           <Router>
