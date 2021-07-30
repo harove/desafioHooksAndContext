@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import FeriaContext from "../../contextos/FeriaContext";
 
 interface Props {
@@ -22,7 +23,7 @@ const Producto = ({ id, name, price }: Props) => {
       <div className="col-3">{name}</div>
       <div className="col-3">{price}</div>
       <div className="col-3">   
-        <button onClick={e=>iHandlerOnDelete(e,id)}>delete</button>
+        <Link to={`/remove/${id}`}>delete</Link>
       </div>
     </div>
   );

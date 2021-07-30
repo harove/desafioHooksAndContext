@@ -19,6 +19,7 @@ import Login from "./containers/login/Login";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import PrivateHome from "./containers/privateHome/PrivateHome";
 import Create from "./containers/create/Create";
+import Remove from "./containers/remove/Remove";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
               </Route>
               <Route path="/create" exact>
                 <PrivateRoute path="/create" exact component={Create} />
+              </Route>
+              <Route path="/remove/:id" exact>
+                <PrivateRoute path="/remove/:id" exact component={Remove} />
               </Route>
               <Route path="/comentarios/:id" exact>
                 <Comentarios />
