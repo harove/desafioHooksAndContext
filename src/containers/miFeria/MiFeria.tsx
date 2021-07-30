@@ -13,7 +13,7 @@ const MiFeria = () => {
     <div className="container">
       {
         <div className="row m-5">
-          <div className="col-8">
+          <div className="col-6 offset-sm-3">
             {productos.map((producto) => (
               <Producto
                 id={producto.id}
@@ -21,9 +21,6 @@ const MiFeria = () => {
                 price={producto.price}
               />
             ))}
-          </div>
-          <div className="col-4">
-                <Formulario/>
           </div>
         </div>
       }

@@ -18,6 +18,7 @@ import LoginContextManager from "./contextos/LoginContextManager";
 import Login from "./containers/login/Login";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import PrivateHome from "./containers/privateHome/PrivateHome";
+import Create from "./containers/create/Create";
 
 function App() {
   return (
@@ -37,7 +38,9 @@ function App() {
               <Route path="/privateMiFeria" exact>
                 <PrivateRoute path="/privateMiFeria" exact component={MiFeria} />
               </Route>
-      
+              <Route path="/create" exact>
+                <PrivateRoute path="/create" exact component={Create} />
+              </Route>
               <Route path="/comentarios/:id" exact>
                 <Comentarios />
               </Route>

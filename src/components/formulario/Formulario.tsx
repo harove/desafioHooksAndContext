@@ -1,14 +1,17 @@
 import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 import FeriaContext from "../../contextos/FeriaContext";
 
 const Formulario = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState<any>(0);
   const {handlerOnAdd} = useContext(FeriaContext)
+  const history = useHistory()
 
   const handlerOnSubmit = (e: any) => {
     e.preventDefault();
-    handlerOnAdd({ id: new Date().getTime(), name: name, price: 1000 });
+    handlerOnAdd({ id: new Date().getTime(), name, price });
+    history.push('/')
   };
 
   return (

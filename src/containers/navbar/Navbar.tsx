@@ -16,6 +16,9 @@ const Navbar = () => {
                 <NavLink exact activeClassName="my-active" className="nav-link" aria-current="page" to="/">Home</NavLink>
               </li>
               <li className="nav-item">
+                <NavLink exact activeClassName="my-active" className="nav-link" aria-current="page" to="/create">Create</NavLink>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/privateMiFeria">Private mi Feria</Link>
               </li>
               <li className="nav-item dropdown">

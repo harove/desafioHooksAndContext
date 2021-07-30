@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import FeriaContext from "../../contextos/FeriaContext";
 
 interface Props {
   id: number;
@@ -6,12 +7,23 @@ interface Props {
   price: number;
 }
 
+
 const Producto = ({ id, name, price }: Props) => {
+  const {handlerOnDelete} = useContext(FeriaContext)
+
+  const iHandlerOnDelete = (e:any,id:any)=>{
+    e.preventDefault(e)
+    handlerOnDelete(id)
+  }
+
   return (
     <div key={id} className="row border border-dark">
-      <div className="col-2">{id}</div>
-      <div className="col-2">{name}</div>
-      <div className="col-2">{price}</div>
+      <div className="col-3">{id}</div>
+      <div className="col-3">{name}</div>
+      <div className="col-3">{price}</div>
+      <div className="col-3">   
+        <button onClick={e=>iHandlerOnDelete(e,id)}>delete</button>
+      </div>
     </div>
   );
 };
