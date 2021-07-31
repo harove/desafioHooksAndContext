@@ -23,10 +23,11 @@ const FeriaContextManager = ({ children }: Props) => {
     setProductos([...productos, newProducto]);
   };
   const handlerOnDelete = (id: any) => {
-    setProductos(productos.filter((producto:any)=>producto.id!==id));
+    const remaining = productos.filter((producto:any)=>producto.id!=id)
+    setProductos(remaining);
   };
   const getProductById = (id: any) => {
-    const p = productos.find((producto:any)=>producto.id===id)
+    const p = productos.find((producto:any)=>producto.id==id)
     return p
   };
 

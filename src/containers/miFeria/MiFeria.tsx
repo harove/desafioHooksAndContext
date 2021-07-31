@@ -16,6 +16,7 @@ const MiFeria = () => {
           <div className="col-8">
             {productos.map((producto) => (
               <Producto
+                key ={producto.id}
                 id={producto.id}
                 name={producto.name}
                 price={producto.price}
