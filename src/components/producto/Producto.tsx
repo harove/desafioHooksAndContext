@@ -16,6 +16,9 @@ const Producto = ({ id, name, price }: Props) => {
       <div className="col-2">
         <Link to= {`remove/${id}`} >Remove</Link>
       </div>
+      <div className="col-2">
+        <Link to= {`update/${id}`} >Update</Link>
+      </div>
     </div>
   )
 };

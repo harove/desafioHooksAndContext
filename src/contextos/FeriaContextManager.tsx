@@ -31,9 +31,19 @@ const FeriaContextManager = ({ children }: Props) => {
     return p
   };
 
+  const handlerOnUpdate = (product:any)=>{
+    const p = productos.map((producto:any)=>{ 
+      if (producto.id==product.id)
+        return product
+      else
+        return producto
+    })
+    setProductos(p)
+  }
+
   return (
     <div>
-      <FeriaContext.Provider value={{ handlerOnAdd,handlerOnDelete,getProductById, productos }}>
+      <FeriaContext.Provider value={{ handlerOnAdd,handlerOnDelete,getProductById,handlerOnUpdate, productos }}>
         {children}
       </FeriaContext.Provider>
     </div>

@@ -5,6 +5,7 @@ const FeriaContext = React.createContext({
   handlerOnDelete: (id: any) => {},
   productos: [{ id: 0, name: "", price: 0 }],
   getProductById:(id: any) => <any>({}),
+  handlerOnUpdate: (product: any) => {}
 });
 
 export default FeriaContext;
