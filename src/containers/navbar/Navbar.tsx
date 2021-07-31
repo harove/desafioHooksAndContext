@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import LoginContext from '../../contextos/LoginContext'
 import './navbar.css'
 
 const Navbar = () => {
+    const {logout} = useContext(LoginContext)
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -16,21 +19,14 @@ const Navbar = () => {
                 <NavLink exact activeClassName="my-active" className="nav-link" aria-current="page" to="/">Home</NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/privateMiFeria">Private mi Feria</Link>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                <Link className="nav-link" to="/list">List</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" href="#" tabIndex={-1} aria-disabled="true">Disabled</a>
+                <Link className="nav-link" to="/create">Create</Link>
+              </li>
+    
+              <li className="nav-item">
+                <button onClick={e=>logout()}>Logout</button>
               </li>
             </ul>
             <form className="d-flex">

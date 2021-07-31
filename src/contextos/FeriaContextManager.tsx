@@ -22,10 +22,17 @@ const FeriaContextManager = ({ children }: Props) => {
   const handlerOnAdd = (newProducto: any) => {
     setProductos([...productos, newProducto]);
   };
+  const handlerOnDelete = (id: any) => {
+    setProductos(productos.filter((producto:any)=>producto.id!==id));
+  };
+  const getProductById = (id: any) => {
+    const p = productos.find((producto:any)=>producto.id===id)
+    return p
+  };
 
   return (
     <div>
-      <FeriaContext.Provider value={{ handlerOnAdd, productos }}>
+      <FeriaContext.Provider value={{ handlerOnAdd,handlerOnDelete,getProductById, productos }}>
         {children}
       </FeriaContext.Provider>
     </div>

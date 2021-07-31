@@ -1,5 +1,10 @@
-import React from "react"
+import React from "react";
 
-const FeriaContext = React.createContext({handlerOnAdd:(objecto:any)=>{}, productos: [{id:0,name:"",price:0}]})
+const FeriaContext = React.createContext({
+  handlerOnAdd: (objecto: any) => {},
+  handlerOnDelete: (id: any) => {},
+  productos: [{ id: 0, name: "", price: 0 }],
+  getProductById:(id: any) => ({}),
+});
 
-export default FeriaContext
+export default FeriaContext;

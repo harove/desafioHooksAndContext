@@ -22,9 +22,6 @@ const MiFeria = () => {
               />
             ))}
           </div>
-          <div className="col-4">
-                <Formulario/>
-          </div>
         </div>
       }
     </div>

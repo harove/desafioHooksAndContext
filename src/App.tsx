@@ -18,6 +18,8 @@ import LoginContextManager from "./contextos/LoginContextManager";
 import Login from "./containers/login/Login";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import PrivateHome from "./containers/privateHome/PrivateHome";
+import Create from "./containers/create/Create";
+import Remove from "./components/remove/Remove";
 
 function App() {
   return (
@@ -31,13 +33,15 @@ function App() {
                 <Home />
               </Route>
               <Route path="/about" exact component={About} />
-
-              {/* <Route path="/miFeria" exact component={MiFeria} /> */}
-              
-              <Route path="/privateMiFeria" exact>
-                <PrivateRoute path="/privateMiFeria" exact component={MiFeria} />
+              <Route path="/list" exact>
+                <MiFeria />
               </Route>
-      
+              <Route path="/create" exact>
+                <PrivateRoute path="/create" exact component={Create} />
+              </Route>
+              <Route path="/remove/:id" exact>
+                <PrivateRoute path="/remove/:id" exact component={Remove} />
+              </Route>
               <Route path="/comentarios/:id" exact>
                 <Comentarios />
               </Route>
@@ -45,7 +49,11 @@ function App() {
                 <Login />
               </Route>
               <Route path="/privateHome" exact>
-                <PrivateRoute path="/privateHome" exact component={PrivateHome} />
+                <PrivateRoute
+                  path="/privateHome"
+                  exact
+                  component={PrivateHome}
+                />
               </Route>
               <Route path="*" exact>
                 <NotFound />
